@@ -50,8 +50,8 @@ set background=dark
     iabbr _d  <C-R>=strftime("%a, %d %b %Y")<CR><C-R>=EatChar('\s')<CR>
     iabbr _dt <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR><C-R>=EatChar('\s')<CR>
 
-    let mapleader=","
-    let g:mapleader=","
+    let mapleader="\<Space>"
+    let g:mapleader="\<Space>"
 
     filetype plugin indent on   " Automatically detect file types.
 
@@ -61,7 +61,7 @@ set background=dark
     set encoding=utf-8
 
     set laststatus=2
-"    color wombat256mod
+    color wombat256mod
 
     set foldmethod=marker
 
@@ -107,18 +107,22 @@ set background=dark
     map <C-n> :bn<cr>
     map <C-p> :bp<cr>
 
+    nnoremap <leader>w :w!<cr>
+    nnoremap <leader>q :q!<cr>
+
     nnoremap <Leader>p :set paste!<cr>
     nnoremap <Leader>sv :source $MYVIMRC<CR>
     nnoremap <leader>ev :e $MYVIMRC<cr>
-    nnoremap <leader>,  :w<cr>
     nnoremap <silent> <Leader>mn :call ManPage()<CR>
     nnoremap <silent> <leader>xx :call ExeLine()<cr>
+    nnoremap <leader>t  :tabnew<cr>
+    nnoremap <leader>d  :bd<cr>
 
     nnoremap <leader>c :bp\|bd #<cr>
 
     nmap Q gpap
     nmap <SPACE> /
-    inoremap jk <ESC>
+    inoremap jj <ESC>
 
     " Easier moving in tabs and windows
     map <C-J> <C-W>j<C-W>_
@@ -146,6 +150,7 @@ set background=dark
 
     set nowrap
 
+    let s:manstyle='eman '
     if hostname() == "snorgars"
         set shiftwidth=2
         let s:manstyle='eman '
@@ -181,16 +186,17 @@ set background=dark
 
     " Remember last position
     function! ResCur()
-          if line("'\"") <= line("$")
-              normal! g`"
-              return 1
-          endif
-      endfunction
+        if line("'\"") <= line("$")
+            normal! g`"
+            return 1
+        endif
+    endfunction
 
-      augroup resCur
-          autocmd!
-          autocmd BufWinEnter * call ResCur()
-      augroup END
+    augroup resCur
+        autocmd!
+        autocmd BufWinEnter * call ResCur()
+    augroup END
+
 " }
 
 " Plugins {
