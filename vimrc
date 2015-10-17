@@ -5,11 +5,11 @@ set nocompatible
 filetype off
 set background=dark
 
-"set rtp+=~/dev/dots/.vim/bundle/vundle
-"call vundle#rc()
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
 
 """ Bundles {
-" Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 "" Bundle 'Tagbar'
 "" Bundle 'neocomplcache'
 "" Bundle 'neocomplcache-snippets_complete'
@@ -20,18 +20,18 @@ set background=dark
 " Bundle 'garbas/vim-snipmate'
 " Bundle 'godlygeek/tabular'
 
-" Bundle 'jimenezrick/vimerl'
+Plugin 'jimenezrick/vimerl'
 "" Bundle 'oscarh/vimerl'
 " Bundle 'statusline.vim'
 "" Bundle 'scrooloose/nerdtree'
 "" Bundle 'tyok/ack.vim'
 "" Bundle 'nerdtree-ack'
-" Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 "" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 "" Bundle 'vim-scripts/sessionman.vim'
  "Bundle 'bufexplorer.zip'
-" Bundle 'wombat256.vim'
+Plugin 'wombat256.vim'
 " Bundle 'Lokaltog/vim-powerline'
 
 " }
@@ -123,6 +123,7 @@ set background=dark
     nmap Q gpap
     nmap <SPACE> /
     inoremap jj <ESC>
+    nnoremap ö :
 
     " Easier moving in tabs and windows
     map <C-J> <C-W>j<C-W>_

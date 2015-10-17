@@ -42,6 +42,16 @@
 "xbindkeys_show"
   control+shift + q
 
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+XF86AudioPlay
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+XF86AudioStop
+
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+  control+y
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+  control+u
+
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
 #  c:41 + m:0x4
@@ -53,8 +63,8 @@
 "setxkbmap se"
   control+shift+4
 
-"setxkbmap gb" 
-  control+shift+5 
+"setxkbmap gb"
+  control+shift+5
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
